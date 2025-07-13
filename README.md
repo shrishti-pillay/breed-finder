@@ -77,7 +77,7 @@ breed_finder/
 
 
 ### Demo
-[![view video](media/logo.jpg)](media/breed-finder-app-recording.mp4)
+[![view video](media/logo.jpg)](https://breed-finder-demo-link.s3.ap-southeast-1.amazonaws.com/breed-finder-app-recording.mp4)
 
 
 ## Current works in progress
