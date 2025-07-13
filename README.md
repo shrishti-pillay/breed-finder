@@ -76,6 +76,10 @@ breed_finder/
 
 ## Current works in progress
 
-1. Updating css file for styling.
-2. Show more than 1 results for prompts
-3. Allow users to upload images as input as well. 
+1. Show more than 1 results for prompts
+
+## Updates
+
+### 13/07
+- Accept both images and text as input
+- Added css styling for app
