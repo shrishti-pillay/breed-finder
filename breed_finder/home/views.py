@@ -1,20 +1,25 @@
 import json
 
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.template import loader
+from django.views.decorators.http import  require_POST
+from django.views.decorators.csrf import csrf_protect
 
 from aws_bedrock_image_search.main import query_results, get_presigned_url
 
 def home(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render())
-    
+    return render(request, 'home.html')
+
+@require_POST
+@csrf_protect
 def search(request):
     try:
-        if request.method == 'GET':
-            query = request.GET.get('prompt', '')
-            results = query_results("text",query)
-            print(results)
+        if request.method == 'POST':
+            type = request.POST.get('type', '')
+            data = request.POST.get('data', '')
+            results = query_results(type, data)
+            
             if len(results) >= 1:
                 best_result = results[0]
                 img_id = best_result[0]
@@ -28,4 +33,4 @@ def search(request):
             else:
                 return HttpResponse("No results found.", status=404)
     except Exception as e:
-        return HttpResponse("Invalid request method.", status=405)
+        return HttpResponse(f"Invalid request method. Error = {str(e)}", status=405)
