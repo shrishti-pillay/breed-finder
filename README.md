@@ -72,7 +72,13 @@ breed_finder/
 
 ## Usage
 
-- Enter a breed prompt in the search interface and click "Search" to find matching breeds.
+- Enter a breed prompt in the search interface, or upload/ take a photo of the dog and click 'Search'.
+- The results should take a few seconds. After which you can click on 'Run another search' to start again.
+
+
+### Demo
+[![view video](media/logo.jpg)](media/breed-finder-app-recording.mp4)
+
 
 ## Current works in progress
 
